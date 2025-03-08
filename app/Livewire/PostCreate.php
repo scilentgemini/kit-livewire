@@ -30,7 +30,7 @@ class PostCreate extends Component
 
         Flux::modal("create-post")->close();
 
-        $this->dispatch(event:"reloadPosts");
+        $this->dispatch("reloadPosts");
     }
 
     public function resetForm(){

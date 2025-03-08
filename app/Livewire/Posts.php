@@ -29,6 +29,6 @@ class Posts extends Component
 
     public function edit($id)
     {
-        $this->dispatch("edit-post", $id);
+        $this->dispatch("editPost", $id);
     }
 }

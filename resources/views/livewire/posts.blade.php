@@ -26,7 +26,7 @@
                     <td class="px-4 py-3 text-sm text-gray-600">{{  $post -> title }}</td>
                     <td class="px-4 py-3 text-sm text-gray-600">{{ $post -> body }}</td>
                     <td class="px-4 py-3 space-x-2">
-                        <flux:button size="sm" wire:click='edit({{ $post->id }})'>
+                        <flux:button size="sm" wire:click="edit({{ $post->id }})">
                             Edit
                         </flux:button>
                         
