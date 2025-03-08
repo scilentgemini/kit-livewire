@@ -1,8 +1,8 @@
 <div>
-    <flux:modal name="create-post" class="md:w-96">
+    <flux:modal name="edit-post" class="md:w-96">
         <div class="space-y-6">
             <div>
-                <flux:heading size="lg">Create Post</flux:heading>
+                <flux:heading size="lg">Edit Post</flux:heading>
                 <flux:subheading>Add details for the post.</flux:subheading>
             </div>
 

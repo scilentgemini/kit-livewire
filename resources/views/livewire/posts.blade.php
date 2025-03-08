@@ -5,6 +5,7 @@
     </flux:modal.trigger>
 
     <livewire:post-create/>
+    <livewire:post-edit/>
     
 
     <div class="overflow-x-auto rounded-lg border">
@@ -25,12 +26,10 @@
                     <td class="px-4 py-3 text-sm text-gray-600">{{  $post -> title }}</td>
                     <td class="px-4 py-3 text-sm text-gray-600">{{ $post -> body }}</td>
                     <td class="px-4 py-3 space-x-2">
-                        <button class="px-3 py-1.5 text-xs font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-md">
+                        <flux:button size="sm" wire:click='edit({{ $post->id }})'>
                             Edit
-                        </button>
-                        <button class="px-3 py-1.5 text-xs font-medium text-white bg-red-600 hover:bg-red-700 rounded-md">
-                            Delete
-                        </button>
+                        </flux:button>
+                        
                     </td>
                 </tr>
                 @endforeach

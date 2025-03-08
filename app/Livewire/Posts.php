@@ -26,4 +26,9 @@ class Posts extends Component
     {
         $this -> posts = Post::all();
     }
+
+    public function edit($id)
+    {
+        $this->dispatch("edit-post", $id);
+    }
 }

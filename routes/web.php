@@ -13,7 +13,7 @@ Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
 
-    Route::view('posts', 'posts')
+Route::view('posts', 'posts')
     ->middleware(['auth', 'verified'])
     ->name('posts');
 
@@ -25,4 +25,4 @@ Route::middleware(['auth'])->group(function () {
     Route::get('settings/appearance', Appearance::class)->name('settings.appearance');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
