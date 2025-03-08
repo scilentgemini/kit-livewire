@@ -1,5 +1,4 @@
 <div>
-
     <flux:modal.trigger name="create-post">
         <flux:button class="mb-2">Create Post</flux:button>
     </flux:modal.trigger>
@@ -7,6 +6,31 @@
     <livewire:post-create/>
     <livewire:post-edit/>
     
+    {{-- pop up for confirm delete --}}
+    <flux:modal name="delete-post" class="min-w-[22rem]">
+        <div class="space-y-6">
+            <div>
+                <flux:heading size="lg">
+                    Delete Post?
+                </flux:heading>
+
+                <flux:subheading>
+                    <p>You're about to delete the post.</p>
+                    <p>This action cannot be reversed.</p>
+                </flux:subheading>
+            </div>
+
+            <div class="flex gap-2">
+                <flux:spacer />
+
+                <flux:modal.close>
+                    <flux:button varient="ghost">Cancel</flux:button>
+                </flux:modal.close>
+
+                <flux:button type="submit" variant="danger" wire:click="destroy()">Delete Post</flux:button>
+            </div>
+        </div>
+    </flux:modal>
 
     <div class="overflow-x-auto rounded-lg border">
         <table class="min-w-full divide-y divide-gray-200">
@@ -29,7 +53,9 @@
                         <flux:button size="sm" wire:click="edit({{ $post->id }})">
                             Edit
                         </flux:button>
-                        
+                        <flux:button size="sm" variant="danger" wire:click="delete({{ $post->id }})">
+                            Delete
+                        </flux:button>
                     </td>
                 </tr>
                 @endforeach
